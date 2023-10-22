@@ -24,10 +24,40 @@ namespace MeuFocoTotalApi.Controllers
         /// <response code="511">Usuário não autenticado</response>
         /// <response code="500">Erro no método</response>
         [HttpPost("Cadastrar")]
-        public IActionResult DescargaAdd(FocoTotalCadastroModel Cadastro)
+        public IActionResult CadastroAdd(FocoTotalCadastroModel Cadastro)
         {
 
-            return CustomResponse(_FocoTotalRepository.CadastroAdd(Descarga));
+            return CustomResponse(_FocoTotalRepository.CadastroAdd(Cadastro));
+
+        }
+
+        /// <summary>
+        /// GetTodosOsCadastros
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">Ok</response>
+        /// <response code="511">Usuário não autenticado</response>
+        /// <response code="500">Erro no método</response>
+        [HttpGet("CadastroGetTodos")]
+        public IActionResult CadastroGetTodos()
+        {
+
+            return CustomResponse(_FocoTotalRepository.CadastroGetTodos());
+
+        }
+
+        /// <summary>
+        /// UpdateDoTempo
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">Ok</response>
+        /// <response code="511">Usuário não autenticado</response>
+        /// <response code="500">Erro no método</response>
+        [HttpPost("UpdateTempo")]
+        public IActionResult UpdateTempo(int id, int tempo)
+        {
+
+            return CustomResponse(_FocoTotalRepository.UpdateTempo(id, tempo));
 
         }
     }
