@@ -2,23 +2,21 @@
 {
     public class FocoTotalTodosViewModel
     {
-        public int ID { get; set; }
-        public int TEMPO { get; set; }
-        public string? NOME { get; set; }
-        public string? CPF { get; set; }
-        public int NUMEROCADASTRO { get; set; }
+        public int USERID { get; set; }
+        public int TEMPOOCORRIDO { get; set; }
+        public string? NOMEUSUARIO { get; set; }
+
     }
     public class FocoTotalCadastroModel
     {
-        public int ID { get; set; }
-        public int TEMPO { get; set; }
-        public string NOME { get; set; }
-        public string CPF { get; set; }
-        public int NUMEROCADASTRO { get; set; }
+        public int USERID { get; set; }
+        public int TEMPOOCORRIDO { get; set; }
+        public string? NOMEUSUARIO { get; set; }
+
     }
     public class FocoTotalUpdateTempoModel
     {
-        public int ID { get; set; }
-        public int TEMPO { get; set; }
+        public int USERID { get; set; }
+        public int TEMPOOCORRIDO { get; set; }
     }
 }

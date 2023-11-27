@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <Folder Include="Business\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>

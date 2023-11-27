@@ -1,22 +1,57 @@
-﻿using MeuFocoTotalApi.Model;
+﻿using FirebaseAdmin.Auth;
+using MeuFocoTotalApi.Model;
 
 namespace MeuFocoTotalApi.DbScript
 {
     public class FocoTotalDbScript
     {
-        public string CadastroAdd(FocoTotalCadastroModel cadastro)
+        public Dictionary<string, object> CadastroAdd(FocoTotalCadastroModel cadastro)
         {
-            return $@"";
+            string sql = $@"INSERT INTO USUARIOS(
+                                            USERID,
+                                            USERADD,
+                                            TEMPOOCORRIDO,
+                                            NOMEUSUARIO,
+                                            ATIVO
+                                            ) VALUES (
+                                            :USERID,
+                                            SYSTIMESTAMP,
+                                            :TEMPOOCORRIDO,
+                                            :NOMEUSUARIO
+                                            1
+                                            )
+                        RETURNING USERID INTO :USEID
+                        ";
+            return new Dictionary<string, object>() { { sql, cadastro } };
         }
 
         public string CadastroGetTodos()
         {
-            return $@"";
+            return $@"SELECT * FROM USUARIOS
+                      ";
+        }
+        public string CadastroGetTodosEmAndamento()
+        {
+            return $@"SELECT * FROM USUARIOS
+                      WHERE ATIVO = 1";
         }
 
-        public string UpdateTempo(int id, int tempo)
+        public Dictionary<string, object> UpdateTempo(int id, int tempo)
         {
-            return $@"";
+            string sql = $@"UPDATE USUARIOS SET
+                      TEMPOOCORRIDO = :TEMPOOCORRIDO
+                WHERE USERID = :USERID AND ATIVO = 1
+                ";
+            return new Dictionary<string, object>() { { sql, new { USERID = id, TEMPOOCORRIDO = tempo } } }; 
+        }
+        public Dictionary<string, object> FinalizarTempo(int id, int tempo)
+        {
+            string sql = $@"UPDATE USUARIOS SET
+                      TEMPOOCORRIDO = :TEMPOOCORRIDO,
+                      ATIVO = 0
+                WHERE USERID = :USERID AND ATIVO = 1
+                ";
+            return new Dictionary<string, object>() { { sql, new { USERID = id, TEMPOOCORRIDO = tempo } } };
         }
     }
 }
