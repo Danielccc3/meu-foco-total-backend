@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace HexagonProGraneisRecepcaoApi.Common
+namespace MeuFocoTotalApi.Common
 {
     public class AcessoDados
     {
