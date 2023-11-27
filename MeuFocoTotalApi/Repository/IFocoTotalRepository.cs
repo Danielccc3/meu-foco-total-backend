@@ -7,6 +7,6 @@ namespace MeuFocoTotalApi.Repository
     {
         (HttpStatusCode, string) CadastroAdd(FocoTotalCadastroModel cadastro);
         (HttpStatusCode, IEnumerable<FocoTotalTodosViewModel>) CadastroGetTodos();
-        (HttpStatusCode, IEnumerable<FocoTotalUpdateTempoModel>) UpdateTempo(int id, int tempo);
+        (HttpStatusCode, string) UpdateTempo(int id, int tempo);
     }
 }

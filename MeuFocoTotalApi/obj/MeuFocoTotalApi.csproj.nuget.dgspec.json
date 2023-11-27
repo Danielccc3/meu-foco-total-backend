@@ -40,13 +40,29 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.1.24, )"
+            },
             "FirebaseAdmin": {
               "target": "Package",
               "version": "[2.4.0, )"
             },
+            "Oracle.ManagedDataAccess": {
+              "target": "Package",
+              "version": "[21.12.0, )"
+            },
+            "Slapper.AutoMapper": {
+              "target": "Package",
+              "version": "[2.0.5, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
             }
           },
           "imports": [

@@ -1,10 +1,11 @@
 ﻿using MeuFocoTotalApi.DbScript;
 using MeuFocoTotalApi.Model;
+using MeuFocoTotalApi.Common;
 using System.Net;
 
 namespace MeuFocoTotalApi.Repository
 {
-    public class FocoTotalRepository : IFocoTotalRepository
+    public class FocoTotalRepository : AcessoDados, IFocoTotalRepository
     {
         private FocoTotalDbScript _focoTotalDbScript = new FocoTotalDbScript();
 
@@ -27,7 +28,7 @@ namespace MeuFocoTotalApi.Repository
         {
             try
             {
-                var retorno = Query(_focoTotalDbScript.CadastroGetTodos());
+                var retorno = Query<FocoTotalTodosViewModel>(_focoTotalDbScript.CadastroGetTodos());
                 return (HttpStatusCode.OK, retorno);
             }
             catch (Exception ex)
@@ -37,7 +38,7 @@ namespace MeuFocoTotalApi.Repository
             }
         }
 
-        public (HttpStatusCode, IEnumerable<FocoTotalUpdateTempoModel>) UpdateTempo(int id, int tempo)
+        public (HttpStatusCode, string) UpdateTempo(int id, int tempo)
         {
             try
             {

@@ -20,7 +20,7 @@ namespace MeuFocoTotalApi.Common
                     switch (Base.TIPOBANCO)
                     {
                         case "SQL":
-                            //conexao = new SqlConnection(Base.STRINGCONEXAO);
+                            conexao = new SqlConnection(Base.STRINGCONEXAO);
                             break;
                         case "ORACLE":
                             conexao = new OracleConnection(Base.STRINGCONEXAO);
