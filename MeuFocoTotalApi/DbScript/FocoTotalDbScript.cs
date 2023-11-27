@@ -8,12 +8,14 @@ namespace MeuFocoTotalApi.DbScript
         public Dictionary<string, object> CadastroAdd(FocoTotalCadastroModel cadastro)
         {
             string sql = $@"INSERT INTO USUARIOS(
+                                            ID,
                                             USERID,
                                             USERADD,
                                             TEMPOOCORRIDO,
                                             NOMEUSUARIO,
                                             ATIVO
                                             ) VALUES (
+                                            :ID,
                                             :USERID,
                                             SYSTIMESTAMP,
                                             :TEMPOOCORRIDO,
@@ -40,7 +42,7 @@ namespace MeuFocoTotalApi.DbScript
         {
             string sql = $@"UPDATE USUARIOS SET
                       TEMPOOCORRIDO = :TEMPOOCORRIDO
-                WHERE USERID = :USERID AND ATIVO = 1
+                WHERE USERID = :ID AND ATIVO = 1
                 ";
             return new Dictionary<string, object>() { { sql, new { USERID = id, TEMPOOCORRIDO = tempo } } }; 
         }
@@ -52,6 +54,12 @@ namespace MeuFocoTotalApi.DbScript
                 WHERE USERID = :USERID AND ATIVO = 1
                 ";
             return new Dictionary<string, object>() { { sql, new { USERID = id, TEMPOOCORRIDO = tempo } } };
+        }
+
+        public Dictionary<string, object> DeletarRegistro(int id)
+        {
+            string sql = $@"DELETE USUARIOS WHERE ID = :ID";
+            return new Dictionary<string, object>() { { sql, new { ID = id } } };
         }
     }
 }

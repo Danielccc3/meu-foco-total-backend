@@ -47,17 +47,62 @@ namespace MeuFocoTotalApi.Controllers
         }
 
         /// <summary>
+        /// GetTodosOsCadastros
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">Ok</response>
+        /// <response code="511">Usuário não autenticado</response>
+        /// <response code="500">Erro no método</response>
+        [HttpGet("CadastroGetTodosEmAndamento")]
+        public IActionResult CadastroGetTodosEmAndamento()
+        {
+
+            return CustomResponse(_FocoTotalRepository.CadastroGetTodosEmAndamento());
+
+        }
+
+        /// <summary>
         /// UpdateDoTempo
         /// </summary>
         /// <returns></returns>
         /// <response code="200">Ok</response>
         /// <response code="511">Usuário não autenticado</response>
         /// <response code="500">Erro no método</response>
-        [HttpPost("UpdateTempo")]
+        [HttpPut("UpdateTempo")]
         public IActionResult UpdateTempo(int id, int tempo)
         {
 
             return CustomResponse(_FocoTotalRepository.UpdateTempo(id, tempo));
+
+        }
+
+        /// <summary>
+        /// UpdateDoTempo
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">Ok</response>
+        /// <response code="511">Usuário não autenticado</response>
+        /// <response code="500">Erro no método</response>
+        [HttpPut("FinalizaTempo")]
+        public IActionResult FinalizaTempo(int id, int tempo)
+        {
+
+            return CustomResponse(_FocoTotalRepository.FinalizaTempo(id, tempo));
+
+        }
+
+        /// <summary>
+        /// UpdateDoTempo
+        /// </summary>
+        /// <returns></returns>
+        /// <response code="200">Ok</response>
+        /// <response code="511">Usuário não autenticado</response>
+        /// <response code="500">Erro no método</response>
+        [HttpDelete("DeletarRegistro")]
+        public IActionResult DeletarRegistro(int id)
+        {
+
+            return CustomResponse(_FocoTotalRepository.DeletarRegistro(id));
 
         }
     }

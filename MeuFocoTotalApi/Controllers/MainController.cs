@@ -16,6 +16,7 @@ namespace MeuFocoTotalApi.Controllers
 
         protected MainController()
         {
+
         }
 
         protected ActionResult CustomResponse((HttpStatusCode, dynamic) result)

@@ -38,6 +38,20 @@ namespace MeuFocoTotalApi.Repository
             }
         }
 
+        public (HttpStatusCode, IEnumerable<FocoTotalTodosViewModel>) CadastroGetTodosEmAndamento()
+        {
+            try
+            {
+                var retorno = Query<FocoTotalTodosViewModel>(_focoTotalDbScript.CadastroGetTodosEmAndamento());
+                return (HttpStatusCode.OK, retorno);
+            }
+            catch (Exception ex)
+            {
+                var exception = ex.Message;
+                return (HttpStatusCode.BadRequest, null);
+            }
+        }
+
         public (HttpStatusCode, string) UpdateTempo(int id, int tempo)
         {
             try
@@ -48,7 +62,35 @@ namespace MeuFocoTotalApi.Repository
             catch (Exception ex)
             {
                 var exception = ex.Message;
-                return (HttpStatusCode.BadRequest, null);
+                return (HttpStatusCode.BadRequest, "");
+            }
+        }
+
+        public (HttpStatusCode, string) FinalizaTempo(int id, int tempo)
+        {
+            try
+            {
+                var retorno = Execute(_focoTotalDbScript.FinalizarTempo(id, tempo));
+                return (HttpStatusCode.OK, retorno);
+            }
+            catch (Exception ex)
+            {
+                var exception = ex.Message;
+                return (HttpStatusCode.BadRequest, "");
+            }
+        }
+
+        public (HttpStatusCode, string) DeletarRegistro(int id)
+        {
+            try
+            {
+                var retorno = Execute(_focoTotalDbScript.DeletarRegistro(id));
+                return (HttpStatusCode.OK, retorno);
+            }
+            catch (Exception ex)
+            {
+                var exception = ex.Message;
+                return (HttpStatusCode.BadRequest, "");
             }
         }
     }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anony\\Desktop\\Trabalhos da Faculdade\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj": {}
+    "D:\\Repositorios\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anony\\Desktop\\Trabalhos da Faculdade\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj": {
+    "D:\\Repositorios\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anony\\Desktop\\Trabalhos da Faculdade\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj",
+        "projectUniqueName": "D:\\Repositorios\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj",
         "projectName": "MeuFocoTotalApi",
-        "projectPath": "C:\\Users\\anony\\Desktop\\Trabalhos da Faculdade\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj",
-        "packagesPath": "C:\\Users\\anony\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anony\\Desktop\\Trabalhos da Faculdade\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\obj\\",
+        "projectPath": "D:\\Repositorios\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\MeuFocoTotalApi.csproj",
+        "packagesPath": "C:\\Users\\nielc\\.nuget\\packages\\",
+        "outputPath": "D:\\Repositorios\\TCC\\meu-foco-total-backend\\MeuFocoTotalApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\anony\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nielc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,9 +60,21 @@
               "target": "Package",
               "version": "[6.2.3, )"
             },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "System.Configuration.ConfigurationManager": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+            },
+            "System.Security.Permissions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -76,24 +88,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.25, 6.0.25]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -102,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
